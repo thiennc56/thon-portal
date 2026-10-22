@@ -127,6 +127,34 @@ body{background:var(--light)}
 @media(max-width:800px){.library-intro{padding:25px 22px}.library-stat{min-width:110px;padding-left:18px}.library-intro h2{font-size:26px}.library-toolbar{align-items:flex-start;flex-direction:column}.library-count{align-self:flex-end}.book-body{padding:17px}.book-cover{height:205px}}
 @media(max-width:520px){.service-nine .service{min-height:112px}.service-nine .icon-box{width:44px!important;height:44px!important;margin-bottom:10px}.service-nine .service strong{font-size:11px}.library-intro{align-items:flex-start;flex-direction:column;gap:20px}.library-stat{border-left:0;border-top:1px solid #cfe2f1;padding:14px 0 0;width:100%}.books{grid-template-columns:1fr 1fr;gap:13px}.book-body{padding:14px 13px 15px}.book-body h3{font-size:14px}.book-cover{height:190px;padding:16px 11px}.book-cover strong{font-size:19px}.book-cover small{font-size:8px;letter-spacing:1.2px}.book-cover .icon{width:29px;height:29px}.book-actions{align-items:stretch;flex-direction:column;gap:7px}.book-actions .btn{width:100%;font-size:11px}.book-source{font-size:9px}}
 
+/* Custom service tiles: bespoke SVG artwork replaces the generic utility glyphs. */
+.services:not(.service-nine){grid-template-columns:repeat(6,minmax(0,1fr));gap:14px}
+.services:not(.service-nine) .service{position:relative;display:flex;min-height:164px;flex-direction:column;align-items:flex-start;padding:18px 17px 16px;border:1px solid #d8e8f5;border-radius:18px;background:linear-gradient(145deg,#fff 0%,#f8fbff 100%);box-shadow:0 5px 18px rgba(7,59,128,.05);text-align:left;overflow:hidden}
+.services:not(.service-nine) .service::before{content:"";position:absolute;inset:0 0 auto;height:3px;background:var(--service-accent,#0b63ce);opacity:.9}
+.services:not(.service-nine) .service:hover{transform:translateY(-5px);border-color:var(--service-accent,#8fc2e7);background:#fff;box-shadow:0 16px 30px rgba(7,59,128,.13)}
+.services:not(.service-nine) .icon-box{position:relative;display:grid;width:58px;height:58px;margin:0 0 20px;border:1px solid var(--service-border,#cfe5f7);border-radius:17px;background:var(--service-tint,#eaf5ff);color:var(--service-accent,#0b63ce);box-shadow:inset 0 1px 0 rgba(255,255,255,.9)}
+.services:not(.service-nine) .icon-box .icon{display:none}
+.services:not(.service-nine) .icon-box::before{content:"";display:block;width:100%;height:100%;background:center/42px 42px no-repeat var(--service-icon)}
+.services:not(.service-nine) .service strong{display:block;color:var(--service-ink,#12365a);font-size:13px;line-height:1.35;letter-spacing:-.1px}
+.services:not(.service-nine) .service small{display:flex;align-items:center;justify-content:space-between;gap:7px;width:100%;margin-top:auto;color:#6a8197;font-size:11px;line-height:1.35}
+.services:not(.service-nine) .service small::after{content:"↗";display:grid;place-items:center;width:23px;height:23px;flex:none;border:1px solid var(--service-border,#cfe5f7);border-radius:8px;color:var(--service-accent,#0b63ce);font-size:13px;font-weight:700;transition:transform .2s,background .2s,color .2s}
+.services:not(.service-nine) .service:hover small::after{transform:translate(2px,-2px);background:var(--service-accent,#0b63ce);color:#fff}
+.services:not(.service-nine) .service small::after{content:">"}
+.services:not(.service-nine) .service:nth-child(1){--service-accent:#0b63ce;--service-ink:#103d71;--service-tint:#e8f4ff;--service-border:#c8e2f7;--service-icon:url("assets/icons/service-civic.png")}
+.services:not(.service-nine) .service:nth-child(2){--service-accent:#d28a1f;--service-ink:#684619;--service-tint:#fff5df;--service-border:#f1ddaf;--service-icon:url("assets/icons/service-appointment.png")}
+.services:not(.service-nine) .service:nth-child(3){--service-accent:#16878f;--service-ink:#15565d;--service-tint:#e9f8f7;--service-border:#c6e8e5;--service-icon:url("assets/icons/service-feedback.png")}
+.services:not(.service-nine) .service:nth-child(4){--service-accent:#3479c7;--service-ink:#194d80;--service-tint:#edf6ff;--service-border:#cfe2f6;--service-icon:url("assets/icons/service-map.png")}
+.services:not(.service-nine) .service:nth-child(5){--service-accent:#2b75be;--service-ink:#1a466f;--service-tint:#eef7ff;--service-border:#cfe3f6;--service-icon:url("assets/icons/service-public-info.png")}
+.services:not(.service-nine) .service:nth-child(6){--service-accent:#2469b4;--service-ink:#21486d;--service-tint:#edf6ff;--service-border:#d0e2f4;--service-icon:url("assets/icons/service-library.png")}
+.article.subsection{border:1px solid #d9e9f6;border-radius:20px;background:linear-gradient(145deg,#fff 0%,#fafdff 100%);box-shadow:0 9px 26px rgba(7,59,128,.06)}
+.article.subsection h2{color:#12365a;font-size:22px}
+.article.subsection p{color:#5d7590}
+.article.subsection a.btn.btn-outline{min-height:46px;padding:11px 18px;border-color:#0b63ce;background:linear-gradient(135deg,#1478de,#0b63ce);color:#fff;box-shadow:0 9px 18px rgba(11,99,206,.2);white-space:nowrap}
+.article.subsection a.btn.btn-outline:hover{border-color:#073b80;background:linear-gradient(135deg,#0d6dcd,#073b80);color:#fff;box-shadow:0 12px 22px rgba(7,59,128,.24)}
+.article.subsection a.btn.btn-outline .icon{color:currentColor}
+@media(max-width:1100px){.services:not(.service-nine){grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:520px){.services:not(.service-nine){gap:10px}.services:not(.service-nine) .service{min-height:145px;padding:16px 12px 13px;border-radius:15px}.services:not(.service-nine) .icon-box{width:48px;height:48px;margin-bottom:15px;border-radius:14px}.services:not(.service-nine) .icon-box::before{background-size:35px 35px}.services:not(.service-nine) .service strong{font-size:12px}.services:not(.service-nine) .service small{font-size:10px}.services:not(.service-nine) .service small::after{width:20px;height:20px;font-size:12px}.article.subsection{padding:23px}.article.subsection h2{font-size:20px}.article.subsection a.btn.btn-outline{width:100%;white-space:normal}}
+
 /* Vietnamese typography fallback: keep diacritics attached and evenly rendered. */
 body{font-family:"Segoe UI","Arial",sans-serif;font-kerning:normal;text-rendering:optimizeLegibility}
 .hero h1 em,.book-cover,.quote{font-family:"Cambria","Times New Roman","Segoe UI",serif}
@@ -261,3 +289,23 @@ body{font-family:"Segoe UI","Arial",sans-serif;font-kerning:normal;text-renderin
 .chatbot-form button .icon{width:19px;height:19px;stroke-width:1.7}
 @media(max-width:800px){.header-tools{gap:9px}.auth-actions{gap:5px}.auth-btn{min-height:36px;padding:7px 9px;font-size:11px}.chatbot-shell{right:16px;bottom:16px}.chatbot-toggle{width:58px;height:58px}}
 @media(max-width:520px){.auth-btn{width:38px;height:38px;min-height:38px;padding:0;border-radius:10px}.auth-btn span{display:none}.auth-btn .auth-icon{width:18px;height:18px}.chatbot-panel{right:-4px;bottom:68px;width:min(350px,calc(100vw - 24px))}.chatbot-messages{max-height:300px}.chatbot-toggle{width:54px;height:54px;border-radius:17px}.chatbot-toggle-icon{width:34px;height:34px}.chatbot-toggle .icon{width:26px;height:26px}}
+
+/* Button contrast guard: never let a theme override make the label disappear. */
+.btn{color:#fff}
+.btn-outline{background:#fff;color:#0b63ce;border-color:#bcd8ee}
+.btn-outline:hover{background:#eef7ff;color:#073b80;border-color:#8fc2e7}
+.btn-gold{background:#fff3cc;color:#4b3a16}
+.btn-gold:hover{background:#ffe7a6;color:#3a2b0e}
+.btn-ghost{background:rgba(255,255,255,.1);color:#fff;border-color:rgba(255,255,255,.65)}
+.newsletter .btn{background:#fff;color:#0b63ce}
+.newsletter .btn:hover{background:#eaf5ff;color:#073b80}
+.side-banner .btn{background:#fff3cc;color:#4b3a16}
+.side-banner .btn:hover{background:#ffe7a6;color:#3a2b0e}
+
+/* The Tam Đảo directory card follows the same rhythm and image treatment as every other hamlet. */
+.village-photo-card.featured{grid-column:auto;display:block;min-height:250px;background:#0b416f url("assets/images/villages/village-lane.webp") center/cover no-repeat;border-color:rgba(178,219,244,.95)}
+.village-photo-card.featured .village-photo-media{height:100%}
+.village-photo-card.featured .village-photo-media img{height:100%;min-height:100%;object-fit:cover}
+.village-photo-card.featured .village-photo-body{min-height:250px;padding:28px 48px 24px 20px;justify-content:flex-end}
+.village-photo-card.featured .village-photo-body h3{font-size:17px}
+@media(max-width:520px){.village-photo-card.featured{min-height:230px}.village-photo-card.featured .village-photo-media img{height:100%;min-height:100%}.village-photo-card.featured .village-photo-body{min-height:230px;padding:24px 45px 21px 18px}.village-photo-card.featured .village-photo-body h3{font-size:18px}}
